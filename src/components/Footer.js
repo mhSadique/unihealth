@@ -20,7 +20,6 @@ const Footer = () => {
                             <a href="#">Русский</a>
                             <a href="#">فارس</a>
                             <a href="#">Español</a>
-                            <a href="#">Tiếng Việt</a>
                         </div>
                     </div>
                 </div>
@@ -33,7 +32,7 @@ const Footer = () => {
                     <a href="#">Emergency Department Locations</a>
                     <a href="#">Check your Insurance</a>
                     <a href="#">International Patients</a>
-                    <a href="#">Billing & Insurance</a>
+                    <a href="#">Billing &amp; Insurance</a>
                 </div>
                 <div className="get-involved">
                     <p>Get Involved</p>

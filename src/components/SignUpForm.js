@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/LogInForm.css'
 
 const SignUpForm = () => {
@@ -21,7 +22,7 @@ const SignUpForm = () => {
             </div>
 
             <div className="form-container signin">
-                <p>Already have an account? <a href="#">Login</a>.</p>
+                <p>Already have an account? <Link to="/login">Login</Link>.</p>
             </div>
         </form>
     );

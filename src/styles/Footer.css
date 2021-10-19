@@ -10,7 +10,7 @@ footer .container {
   margin: 0 auto;
 }
 
-footer * {
+footer p, footer a {
   color: #f6f4ee;
 }
 
@@ -22,7 +22,7 @@ footer .upper-portion {
 
 footer .upper-portion .international .info p {
   font-size: 21px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 footer .upper-portion .international .languages {
@@ -31,7 +31,7 @@ footer .upper-portion .international .languages {
 }
 
 footer .upper-portion .international .languages a {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-decoration: none;
 }
 
@@ -42,11 +42,11 @@ footer .upper-portion .patients {
 
 footer .upper-portion .patients p {
   font-size: 21px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 footer .upper-portion .patients a {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-decoration: none;
 }
 
@@ -57,11 +57,11 @@ footer .upper-portion .get-involved {
 
 footer .upper-portion .get-involved p {
   font-size: 21px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 footer .upper-portion .get-involved a {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-decoration: none;
 }
 
@@ -72,11 +72,11 @@ footer .upper-portion .uni-health {
 
 footer .upper-portion .uni-health p {
   font-size: 21px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 footer .upper-portion .uni-health a {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-decoration: none;
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import Branding from '../components/Branding';
 import CancerServices from '../components/CancerServices';
-import Footer from '../components/Footer';
 import GeneralServices from '../components/GeneralServices';
 import SpecialtyServices from '../components/SpecialtyServices';
 import TopBanner from '../components/TopBanner';
@@ -16,7 +15,6 @@ const Home = () => {
             <GeneralServices />
             <CancerServices />
             <SpecialtyServices />
-            <Footer />
         </>
     );
 };
