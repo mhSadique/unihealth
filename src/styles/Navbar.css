@@ -81,6 +81,7 @@
   .nav-container .logo {
     width: 100%;
     font-size: 45px;
+    text-align: center;
   }
 
   .nav-container .nav-info {
@@ -104,6 +105,13 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-info .profile-info{
+    width: 100%;
+    text-align: center;
   }
 
   .nav-container .profile-info a {

@@ -9,13 +9,6 @@ const FindDoctor = () => {
                 {generalServices.map(service => 'hello ' + service.serviceName)}
             </div>
             <hr/>
-            {/* <div>
-                {cancerServices.map(service => service)}
-            </div>
-            <hr/>
-            <div>
-                {specialtyServices.map(service => service)}
-            </div> */}
         </>
     );
 };
