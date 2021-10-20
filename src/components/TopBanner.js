@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/TopBanner.css';
 
 const TopBanner = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <section className="top-banner">
         <div className="top-banner-container">

@@ -14,6 +14,7 @@ import FindDoctor from './pages/FindDoctor';
 import MakeAppointment from './pages/MakeAppointment';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
+import ServiceDetail from './pages/ServiceDetail';
 
 function App() {
   return (
@@ -24,18 +25,21 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
-        <Route path="/find-doctor">
+        <Route exact path="/find-doctor">
           <FindDoctor />
         </Route>
-        <Route path="/make-appointment">
+        <Route exact path="/make-appointment">
           <MakeAppointment />
         </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login />
         </Route>
-        <Route path="/register">
+        <Route exact path="/register">
           <Register />
         </Route>
+          <Route exact path="/service/:id">
+              <ServiceDetail />
+          </Route>
         <Route path="*">
           <NotFound />
         </Route>

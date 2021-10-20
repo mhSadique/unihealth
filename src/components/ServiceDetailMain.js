@@ -4,11 +4,11 @@ import '../styles/ServiceDetailMain.css';
 import SingleServiceDetail from './SingleServiceDetail';
 import UsefulLinks from './UsefulLinks';
 
-const ServiceDetailMain = () => {
+const ServiceDetailMain = ({service}) => {
     return (
         <section className="single-topic">
             <div className="single-topic-detail-container">
-                <SingleServiceDetail />
+                <SingleServiceDetail service={service}/>
                 <UsefulLinks />
             </div>
         </section>

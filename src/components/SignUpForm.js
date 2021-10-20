@@ -11,10 +11,10 @@ const SignUpForm = () => {
                 <p>Please fill in this form to register.</p>
                 <hr/>
 
-                <label for="email"><b>Email</b></label> <br />
+                <label htmlFor="email"><b>Email</b></label> <br />
                 <input type="text" placeholder="Enter Email" name="email" id="email" required/> <br />
 
-                <label for="psw"><b>Password</b></label> <br />
+                <label htmlFor="psw"><b>Password</b></label> <br />
                 <input type="password" placeholder="Enter Password" name="psw" id="psw" required/>
                 <hr/>
 

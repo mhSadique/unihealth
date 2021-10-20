@@ -22,7 +22,7 @@
 
 .cancer-services-container .service {
   background-color: white;
-  padding: 30px 50px;
+  padding: 30px 20px;
   border-radius: 5px;
 }
 
@@ -32,12 +32,17 @@
   color: #003b5c;
 }
 
+/* .cancer-services-container .service .service-link {
+  display: flex;
+  justify-content: space-between;
+} */
+
 @media screen and (max-width: 767px) {
   .cancer-services-container {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .cancer-services-container .service {
-    padding: 15px 25px;
+    padding: 15px 10px;
   }
 }

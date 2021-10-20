@@ -1,10 +1,22 @@
-import React from 'react';
+import useServices from '../hooks/useServices';
 
 const FindDoctor = () => {
+    const {generalServices} = useServices();
+
     return (
-        <div>
-            <h1>Find a doctor</h1>
-        </div>
+        <>
+            <div>
+                {generalServices.map(service => 'hello ' + service.serviceName)}
+            </div>
+            <hr/>
+            {/* <div>
+                {cancerServices.map(service => service)}
+            </div>
+            <hr/>
+            <div>
+                {specialtyServices.map(service => service)}
+            </div> */}
+        </>
     );
 };
 

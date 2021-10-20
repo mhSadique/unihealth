@@ -1,12 +1,12 @@
 import React from 'react';
 import '../styles/ServiceDetailBanner.css';
-const ServiceDetailBanner = () => {
+const ServiceDetailBanner = ({service}) => {
     return (
         <section className="banner-single">
             <div className="banner-container">
                 <div className="text-container">
-                    <h2>General Pediatrics</h2>
-                    <p>Our experienced doctors are passionate about providing children with the best care</p>
+                    <h2>{service.headingBanner}</h2>
+                    <p>{service.paraBanner}</p>
                 </div>
             </div>
         </section>
