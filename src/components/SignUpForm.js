@@ -1,24 +1,78 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router';
+import { UserContext } from '../Context/Context';
 import '../styles/LogInForm.css'
 
+const googleProvider = new GoogleAuthProvider();
+const auth = getAuth();
 const SignUpForm = () => {
+    const location = useLocation();
+    const history = useHistory();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const redirectUri = location.state?.from || '/';
+
+    const {user, isLoggedIn, setIsLoggedIn, setUser, setError} = useContext(UserContext);
+    console.log(user, isLoggedIn);
+    
+    const handleSubmit = e => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(userCredential => {
+                const createdUser = userCredential.user;
+                setUser(createdUser);
+                setIsLoggedIn(true)
+            })
+            .catch(err => {
+                const errMsg = err.message;
+                console.log(errMsg);
+            })
+        e.preventDefault();
+    };
+
+    const handleEmailChange = e => {
+        setEmail(e.target.value)
+        e.preventDefault();
+    };
+
+    const handlePasswordChange = e => {
+        setPassword(e.target.value)
+        e.preventDefault();
+    };
+
+    const hadleGoogleRegister = (e) => {
+        signInWithPopup(auth, googleProvider)
+            .then(userCredential => {
+                const createdUser = userCredential.user;
+                setUser(createdUser);
+                setIsLoggedIn(true);
+                setError('');
+                history.push(redirectUri);
+            })
+            .catch(err => {
+                const errMsg = err.message;
+                setError(errMsg);
+            })
+        e.preventDefault();
+    };
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="form-container">
                 <h1>Register</h1>
                 <p>Please fill in this form to register.</p>
                 <hr/>
 
                 <label htmlFor="email"><b>Email</b></label> <br />
-                <input type="text" placeholder="Enter Email" name="email" id="email" required/> <br />
+                <input type="text" onChange={handleEmailChange} placeholder="Enter Email" name="email" id="email" required /> <br />
 
                 <label htmlFor="psw"><b>Password</b></label> <br />
-                <input type="password" placeholder="Enter Password" name="psw" id="psw" required/>
+                <input type="password" onChange={handlePasswordChange} placeholder="Enter Password" name="psw" id="psw" required />
                 <hr/>
 
-                <button type="submit" className="registerbtn">Register</button>
+                <button type="submit" className="registerbtn">Register</button> <br/>
+                <button onClick={hadleGoogleRegister} type="submit" className="registerbtn">Register with Google</button>
             </div>
 
             <div className="form-container signin">

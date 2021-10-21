@@ -5,8 +5,10 @@ import Logo from './Logo';
 import NavLinks from './NavLinks';
 import ProfileInfo from './ProfileInfo';
 import '../styles/Navbar.css';
+import useFirebase from '../hooks/useFirebase';
 
 const Navbar = () => {
+    useFirebase();
     return (
         <nav>
             <div className="nav-container">

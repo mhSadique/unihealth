@@ -1,17 +1,35 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../Context/Context';
+import { getAuth, signOut } from "firebase/auth";
 
 const ProfileInfo = () => {
+
+    const {setIsLoggedIn, error, setError} = useContext(UserContext);
+    
+    const logout = (e) => {
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            console.log('logged out');
+            setIsLoggedIn(false);
+        }).catch((error) => {
+            // console.log(error.message);
+            // setError(error.message);
+        });
+        e.preventDefault();
+    };
+
+    const { isLoggedIn, user } = useContext(UserContext);
     return (
         <div className="profile-info">
-            <Link to="/login">Login</Link>
-            <Link to="">Logout</Link>
-            <Link to="/register">Register</Link>
-            <span className="name">Sadique</span>
-            <img src="https://cdn-wordpress-info.futurelearn.com/info/wp-content/uploads/FL463_Explore_industries_-_Healthcare_blog_header.jpg"
-                alt="Image" />
+            {isLoggedIn || <Link to="/login">Login</Link>}
+            {isLoggedIn && <Link to="" onClick={(e) => logout(e)} >Logout</Link>}
+            {isLoggedIn || <Link to="/register">Register</Link>}
+            {(isLoggedIn && user.displayName) && <span className="name">{user.displayName}</span>}
+            {(isLoggedIn && user.displayName) && <img src={user.photoURL}
+                alt="Image" />}
         </div>
     );
 };

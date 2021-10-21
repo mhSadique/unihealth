@@ -15,35 +15,39 @@ import MakeAppointment from './pages/MakeAppointment';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
 import ServiceDetail from './pages/ServiceDetail';
+import Context from './Context/Context';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
     <Router>
       <TopHeader />
-      <Navbar />
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route exact path="/find-doctor">
-          <FindDoctor />
-        </Route>
-        <Route exact path="/make-appointment">
-          <MakeAppointment />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/register">
-          <Register />
-        </Route>
-          <Route exact path="/service/:id">
-              <ServiceDetail />
+      <Context>
+        <Navbar />
+        <Switch>
+          <Route exact path='/'>
+            <Home />
           </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
+          <PrivateRoute exact path="/find-doctor">
+            <FindDoctor />
+          </PrivateRoute>
+          <PrivateRoute exact path="/make-appointment">
+            <MakeAppointment />
+          </PrivateRoute>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <PrivateRoute exact path="/service/:id">
+            <ServiceDetail />
+          </PrivateRoute>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+      </Context>
       <Footer />
     </Router>
   );
