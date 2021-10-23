@@ -9,7 +9,7 @@ UniHealth hospitals ranked #1 in both Los Angeles and California and rose to #3 
 ### Site description
 
 * This is a hospital website
-* This site is built with React
-* React Router was implemented in this site
-* Firebase was used for authentication
+* This site is built with React and developer-generated data were used.
+* React Router was implemented in this site. This means no page reloading.
+* Firebase was used for authentication. That means you can register and log in as user and your user data will be saved in our firebase server.
 * The site is hosted in Firebase Hosting. Feel free to visit the site.
