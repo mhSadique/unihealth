@@ -7,13 +7,14 @@ import { getAuth, signOut } from "firebase/auth";
 
 const ProfileInfo = () => {
 
-    const {setIsLoggedIn, error, setError} = useContext(UserContext);
+    const {setIsLoggedIn, user, isLoggedIn, } = useContext(UserContext);
     
     const logout = (e) => {
         const auth = getAuth();
         signOut(auth).then(() => {
             console.log('logged out');
             setIsLoggedIn(false);
+            localStorage.setItem('isUserLoggedIn', JSON.stringify(false));
         }).catch((error) => {
             // console.log(error.message);
             // setError(error.message);
@@ -21,7 +22,7 @@ const ProfileInfo = () => {
         e.preventDefault();
     };
 
-    const { isLoggedIn, user } = useContext(UserContext);
+    // const { isLoggedIn, user } = useContext(UserContext);
     return (
         <div className="profile-info">
             {isLoggedIn || <Link to="/login">Login</Link>}
