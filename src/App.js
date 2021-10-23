@@ -28,10 +28,10 @@ function App() {
           <Route exact path='/'>
             <Home />
           </Route>
-          <PrivateRoute exact path="/find-doctor">
+          <PrivateRoute exact path="/find-doctor" isToBeNeglected={true}>
             <FindDoctor />
           </PrivateRoute>
-          <PrivateRoute exact path="/make-appointment">
+          <PrivateRoute exact path="/make-appointment" isToBeNeglected={true}>
             <MakeAppointment />
           </PrivateRoute>
           <Route exact path="/login">

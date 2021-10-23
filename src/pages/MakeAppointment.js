@@ -3,8 +3,8 @@ import '../styles/MakeAppointment.css';
 
 const MakeAppointment = () => {
     return (
-        <section class="appointment">
-            <div class="appointment-container">
+        <section className="appointment">
+            <div className="appointment-container">
                 <form>
                     <h2>Book an Appointment</h2>
                     <p>Please fill out the form below to make an appointment</p>
