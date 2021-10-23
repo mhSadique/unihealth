@@ -22,7 +22,6 @@ const ProfileInfo = () => {
         e.preventDefault();
     };
 
-    // const { isLoggedIn, user } = useContext(UserContext);
     return (
         <div className="profile-info">
             {isLoggedIn || <Link to="/login">Login</Link>}

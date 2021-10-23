@@ -1,9 +1,6 @@
-import useServices from '../hooks/useServices';
 import '../styles/FindDoctor.css';
 import image from '../assets/images/doctorss.PNG';
 const FindDoctor = () => {
-    const {generalServices} = useServices();
-
     return (
         <section className="find-doctor">
         <div className="find-doctor-container">

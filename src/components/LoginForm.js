@@ -16,7 +16,7 @@ const LoginForm = () => {
     const [password, setPassword] = useState('');
     const redirectUri = location.state?.from || '/';
 
-    const { user, isLoggedIn, setUser, setIsLoggedIn, error, setError } = useContext(UserContext);
+    const { isLoggedIn, setUser, setIsLoggedIn, error, setError } = useContext(UserContext);
 
     const handleSubmit = e => {
         if (isLoggedIn) {
@@ -68,7 +68,6 @@ const LoginForm = () => {
         e.preventDefault();
     };
 
-    console.log(user);
 
     return (
         <form onSubmit={handleSubmit} >
